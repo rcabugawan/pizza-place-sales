@@ -17,13 +17,20 @@ class IngredientController extends Controller
     public function index(Request $request): JsonResponse
     {
         $page = $request->input('page', 1);
-        $perPage = $request->input('perPage', 20);
+        $perPage = $request->input('perPage', 10);
         $sortBy = $request->input('sortBy', 'id');
         $sortOrder = $request->input('sortOrder', 'asc');
 
-        return new JsonResponse(
-            IngredientResource::collection($this->service->browse($page, $perPage, $sortBy, $sortOrder))
-        );
+        $results = $this->service->browse($page, $perPage, $sortBy, $sortOrder);
+
+        return new JsonResponse([
+            'data' => IngredientResource::collection($results->items()),
+            'meta' => [
+                'perPage' => $results->perPage(),
+                'currentPage' => $results->currentPage(),
+                'total' => $results->total(),
+            ]
+        ]);
     }
 
     /**
