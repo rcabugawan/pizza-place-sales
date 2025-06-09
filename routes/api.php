@@ -5,7 +5,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PizzaTypeController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::apiResource('orders', OrderController::class)->only([
         'index', 'show'
     ]);
