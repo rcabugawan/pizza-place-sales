@@ -19,4 +19,9 @@ class OrderDetail extends Model
     {
         return $this->belongsTo(Order::class, 'order_id', 'order_id');
     }
+
+    public function pizza(): BelongsTo
+    {
+        return $this->belongsTo(Pizza::class, 'pizza_id', 'pizza_id');
+    }
 }

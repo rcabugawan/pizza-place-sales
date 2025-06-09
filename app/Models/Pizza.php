@@ -14,13 +14,12 @@ class Pizza extends Model
 
     public $visible = [
         'pizza_id',
-        'pizza_type',
         'size',
         'price',
     ];
 
-    public function pizzaType(): BelongsTo
+    public function pizza_type(): BelongsTo
     {
-        return $this->belongsTo(PizzaType::class, 'pizza_type', 'pizza_type_id');
+        return $this->belongsTo(PizzaType::class, 'pizza_type_id', 'pizza_type_id');
     }
 }

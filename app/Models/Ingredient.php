@@ -14,7 +14,7 @@ class Ingredient extends Model
         'label',
     ];
 
-    public function pizzaType(): BelongsToMany
+    public function pizza_types(): BelongsToMany
     {
         return $this->belongsToMany(PizzaType::class, 'pizza_type_ingredients', 'ingredient_id', 'pizza_type_id');
     }
