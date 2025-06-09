@@ -20,8 +20,9 @@ class PizzaTypeController extends Controller
         $perPage = $request->input('perPage', 10);
         $sortBy = $request->input('sortBy', 'id');
         $sortOrder = $request->input('sortOrder', 'asc');
+        $search = $request->input('search', null);
 
-        $results = $this->service->browse($page, $perPage, $sortBy, $sortOrder);
+        $results = $this->service->browse($page, $perPage, $sortBy, $sortOrder, $search);
 
         return new JsonResponse([
             'data' => PizzaTypeResource::collection($results->items()),

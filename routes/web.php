@@ -17,6 +17,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/orders/{id}', function (Request $request, string $id) {
         return inertia('Order', ['id' => $id]);
     })->name('order');
+
+    Route::get('/pizza-types/{id}', function (Request $request, string $id) {
+        return inertia('PizzaType', ['id' => $id]);
+    })->name('pizza-type');
+
+    Route::get('/ingredients/{id}', function (Request $request, string $id) {
+        return inertia('Ingredient', ['id' => $id]);
+    })->name('ingredient');
 });
 
 require __DIR__.'/settings.php';

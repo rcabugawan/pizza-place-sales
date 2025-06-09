@@ -7,9 +7,18 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class IngredientService
 {
-    public function browse($page, $perPage, $sortBy, $sortOrder): LengthAwarePaginator
+    public function browse($page, $perPage, $sortBy, $sortOrder, $search): LengthAwarePaginator
     {
         $query = Ingredient::query();
+
+        if($search) {
+            $query->where('label', 'like', "%" . $search . "%");
+        }
+
+
+        if($sortBy) {
+            $query->orderBy($sortBy, $sortOrder);
+        }
 
         return $query->paginate($perPage, ['*'], 'page', $page);
     }

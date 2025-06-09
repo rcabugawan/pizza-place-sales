@@ -29,7 +29,7 @@
         { field: 'id', title: 'ID', type: 'number', isUnique: true },
         { field: 'name', title: 'Name', type: 'date' },
         { field: 'size', title: 'Size',},
-        { field: 'category', title: 'Category', type: 'number' },
+        { field: 'quantity', title: 'Quantity', type: 'number' },
         { field: 'price', title: 'Price'},
     ]
 
@@ -61,6 +61,10 @@
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="p-5">
+            <div class="flex">
+                <h4 class="m-3">{{ 'Order Line Items:' }}</h4>
+                <h4 class="ml-auto flex items-center mr-10"><span class="font-bold mr-2">Total:</span> {{ order.total_price }}</h4>
+            </div>
             <Vue3Datatable
                 v-if="orderDetails.length > 0"
                 class="border border-gray-100 p-5 rounded-md"
@@ -77,10 +81,6 @@
 
                 <template #size="data">
                     <span>{{ data.value.pizza.size }}</span>
-                </template>
-
-                <template #category="data">
-                    <span>{{ data.value.pizza.pizza_type.category }}</span>
                 </template>
 
                 <template #price="data">

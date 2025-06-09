@@ -88,7 +88,7 @@
 
             <Vue3Datatable
                 class="border border-gray-100 p-5 rounded-md"
-                rowClass="dark:text-white dark:bg-gray-900"
+                rowClass="dark:text-white dark:bg-gray-800"
                 skin="bh-table-bordered"
                 :loading="loading"
                 :columns="headers"
@@ -104,7 +104,7 @@
             >
                 <template #actions="data">
                     <div class="flex gap-4">
-                        <button type="button" class="cursor-pointer py-1 px-2 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors" @click="viewOrder(data.value)">View</button>
+                        <button type="button" class="cursor-pointer py-1 px-2 bg-gray-100 dark:bg-gray-900 dark:text-white rounded-md hover:bg-gray-200 transition-colors" @click="viewOrder(data.value)">View</button>
                     </div>
                 </template>
             </Vue3Datatable>

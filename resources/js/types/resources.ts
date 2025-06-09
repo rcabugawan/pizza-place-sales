@@ -23,3 +23,8 @@ export interface PizzaTypeResource {
     name?: string
     category?: string
 }
+
+export interface IngredientResource {
+    id?: number
+    label?: string
+}
