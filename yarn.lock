@@ -35,6 +35,11 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
+"@bhplugin/vue3-datatable@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@bhplugin/vue3-datatable/-/vue3-datatable-2.0.2.tgz#d7a4b893c06404d74e039270ce6716030ed8cb23"
+  integrity sha512-yOC3mM/WEHOxR16enCPemnrCDxNaNQJ6e0/tJ1z+lLyJInkwhpQfJ96TTTWgWiz++8gQG6k+kcfs4CTJvurmGw==
+
 "@emnapi/core@^1.4.3":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.4.3.tgz#9ac52d2d5aea958f67e52c40a065f51de59b77d6"
