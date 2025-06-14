@@ -23,13 +23,13 @@ Install the latest [composer](https://getcomposer.org/download/) and [docker](ht
   ./vendor/bin/sail up -d
  ```
 
-### 4. Generate application key and run migrations
+### 4. Generate application key
 
 ```sh
   ./vendor/bin/sail artisan key:generate
  ```
 
-### 5. Generate application key and run migrations
+### 5. Run migrations and seeder
 
 ```sh
   ./vendor/bin/sail artisan migrate:fresh --seed
